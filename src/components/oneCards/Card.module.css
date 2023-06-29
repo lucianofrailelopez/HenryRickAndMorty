@@ -1,0 +1,58 @@
+.containerCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 69px;
+  width: 352px;
+}
+
+.containerCard:hover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 2px;
+    border-radius: 20px;
+    box-shadow:  5px 5px 5px 10px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    height: 520px;
+    background-color: rgb(238, 105, 105);
+}
+
+.containerButton {
+  position: relative;
+  display: inline-block;
+}
+
+.containerButton button {
+  position: absolute;
+  top: 20px;
+  left: 278px;
+  transform: translate(-50%, -50%);
+  padding: 5px 10px;
+  background-color: white;
+  border: 1px solid lightslategray;
+  border-radius: 10px 10px 10px 10px;
+  color: #000000;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.containerButton button:hover {
+    background-color: rgb(240, 76, 76);
+}
+
+.containerButton img {
+    border-radius: 20px 20px 0px 0px;
+}
+
+.containerDescription {
+  padding: 10px 10px;
+  border-radius: 0px 0px 20px 20px;
+  width: 280px;
+  background-color: rgba(53, 51, 51, 0.842);
+}
+
+.containerDescription h2 {
+  font-size: 15px;
+  color: white;
+}
