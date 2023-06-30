@@ -2,10 +2,11 @@
 import styles from './Card.module.css'
 
 export default function Card(props, key) {
+   const onClose = props.onClose;
    return (
       <div className={styles.containerCard}>
          <div className={styles.containerButton}>
-            <button onClick={props.onClose}>X</button>
+            <button onClick={() => onClose(props.id)}>X</button>
             <img src={props.image} alt='No se encontro' key={key} />
          </div>
          <div className={styles.containerDescription}>

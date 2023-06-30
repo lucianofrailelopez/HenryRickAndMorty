@@ -1,7 +1,7 @@
 .containerSearch {
     display: flex;
     justify-content: space-between;
-    width: 25%;
+    width: 30%;
 }
 
 .containerSearch input {
