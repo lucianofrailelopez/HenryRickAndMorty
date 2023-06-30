@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import styles from './Card.module.css'
 
 export default function Card(props, key) {

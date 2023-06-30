@@ -5,17 +5,3 @@
    background-image: url("https://i.pinimg.com/564x/71/43/b3/7143b3ce2a50b5a76e81978c4178bc8f.jpg");
    height: auto;
 }
-
-.containerHeader {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   width: 80%;
-}
-
-.containerHeader h1 {
-   cursor: pointer;
-   user-select: none;
-   color: whitesmoke;
-   border-bottom: 2px solid lightgreen;
-}

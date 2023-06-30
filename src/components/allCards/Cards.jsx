@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import styles from "./Cards.module.css"
+import Card from "../OneCards";
 
 export default function Cards(props) {
-   console.log(props.characters);
    return (
       <div className={styles.containerCards}>
          {props.characters.map((data) => {
