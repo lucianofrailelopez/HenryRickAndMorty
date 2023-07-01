@@ -2,6 +2,7 @@
    display: flex;
    flex-direction: column;
    align-items: center;
-   background-image: url("https://i.pinimg.com/564x/71/43/b3/7143b3ce2a50b5a76e81978c4178bc8f.jpg");
-   height: auto;
+   background-image: url("../public/rick-and-morty-family-wallpaper-2560x1080_14.jpg");
+   background-size: 1500px 800px;
+   height: 400vh;
 }

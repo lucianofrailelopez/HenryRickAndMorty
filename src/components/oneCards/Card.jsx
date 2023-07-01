@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { Link } from 'react-router-dom';
 import styles from './Card.module.css'
 
 export default function Card(props, key) {
@@ -10,7 +11,9 @@ export default function Card(props, key) {
             <img src={props.image} alt='No se encontro' key={key} />
          </div>
          <div className={styles.containerDescription}>
-            <h2 key={key}>Name: {props.name}</h2>
+            <Link to={`/deatil/${props.id}`} >
+               <h2 key={key}>Name: {props.name}</h2>
+            </Link>
             <h2 key={key}>Status: {props.status}</h2>
             <h2 key={key}>Species: {props.species}</h2>
             <h2 key={key}>Gender: {props.gender}</h2>
