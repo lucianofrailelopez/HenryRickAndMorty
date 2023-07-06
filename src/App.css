@@ -3,6 +3,6 @@
    flex-direction: column;
    align-items: center;
    background-image: url("../public/rick-and-morty-family-wallpaper-2560x1080_14.jpg");
-   background-size: 1500px 800px;
+   background-size: 100% 25%;
    height: 400vh;
 }

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 /* eslint-disable react/prop-types */
 import styles from "./Cards.module.css"
 import Card from "../oneCards/Card";
@@ -15,8 +16,7 @@ export default function Cards(props) {
                gender={data.gender}
                origin={data.origin.name}
                image={data.image}
-               onClose={props.onClose}
-               key={data.id} />
+               onClose={props.onClose} />
             )
          })}
       </div>

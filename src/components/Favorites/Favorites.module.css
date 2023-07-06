@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.containerOptionsFav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+    height: 70px;
+}
+
+.containerOptionsFav select {
+    border: 3px solid rgb(56, 56, 163);
+    border-radius: 8px;
+    width: 150px;
+    height: 25px;
+}

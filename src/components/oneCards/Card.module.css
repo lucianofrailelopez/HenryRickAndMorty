@@ -12,7 +12,7 @@
     justify-content: center;
     margin-bottom: 2px;
     border-radius: 20px;
-    width: 400px;
+    width: 350px;
     height: 520px;
     background-color: rgba(0, 0, 0, 0.773);
 }
@@ -22,22 +22,36 @@
   display: inline-block;
 }
 
-.containerButton button {
+.buttonClose{
   position: absolute;
-  top: 20px;
-  left: 278px;
+  top: 21px;
+  left: 270px;
   transform: translate(-50%, -50%);
-  padding: 5px 10px;
-  background-color: white;
+  padding: 1.5% 2%;
+  background-color: rgba(0, 0, 0, 0.662);
   border: 1px solid lightslategray;
   border-radius: 10px 10px 10px 10px;
-  color: #000000;
+  color: #fff;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
 }
-.containerButton button:hover {
+.buttonClose:hover {
     background-color: rgba(244, 29, 29, 0.662);
+}
+
+.buttonFav {
+  position: absolute;
+  top: 6px;
+  left: 10px;
+  border: none;
+  border-radius: 10px;
+  padding: 1.5% 2%;
+  background-color: rgba(0, 0, 0, 0.662);
+}
+
+.buttonFav:hover {
+  background-color: rgba(244, 29, 29, 0.662);
 }
 
 .containerButton img {

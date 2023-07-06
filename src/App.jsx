@@ -7,6 +7,7 @@ import About from './components/About/About';
 import Deatil from './components/Deatil/Deatil';
 import Error from './components/Error/Error';
 import Form from './components/Form/Form'
+import Favorites from './components/Favorites/Favorites';
 import './App.css';
 
 function App() {
@@ -17,6 +18,10 @@ function App() {
    const [access, setAccess] = useState(false);
    const EMAIL = 'ejemplo@gmail.com';
    const PASSWORD = 'unaPass1';
+
+   function logout() {
+      setAccess(false);
+    }
 
    function login(userData) {
       if (userData.password === PASSWORD && userData.email === EMAIL) {
@@ -53,7 +58,7 @@ function App() {
    return (
       <div className='App'>
          {
-            location.pathname !== '/' && <Nav onSearch={onSearch} />
+            location.pathname !== '/' && <Nav onSearch={onSearch} out={logout} />
          }
          
          <Routes>
@@ -61,6 +66,7 @@ function App() {
             <Route path="/Home" element={<Cards characters={characters} onClose={onClose} />} />
             <Route path='/About' element={<About />} />
             <Route path="/Deatil/:id" element={<Deatil />} />
+            <Route path="/favorite" element={<Favorites />} />
             <Route path="*" element={<Error />} />
          </Routes>
       </div>

@@ -1,24 +1,78 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { Link } from 'react-router-dom';
-import styles from './Card.module.css'
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { addFavorite, deleteFavorite } from "../../redux/actions/actions";
 
-export default function Card(props, key) {
-   const onClose = props.onClose;
-   return (
-      <div className={styles.containerCard}>
-         <div className={styles.containerButton}>
-            <button onClick={() => onClose(props.id)}>X</button>
-            <img src={props.image} alt='No se encontro' key={key} />
-         </div>
-         <div className={styles.containerDescription}>
-            <Link to={`/deatil/${props.id}`} >
-               <h2 key={key}>Name: {props.name}</h2>
-            </Link>
-            <h2 key={key}>Status: {props.status}</h2>
-            <h2 key={key}>Species: {props.species}</h2>
-            <h2 key={key}>Gender: {props.gender}</h2>
-            <h2 key={key}>Origin: {props.origin}</h2>
-         </div>
+import styles from "./Card.module.css";
+
+export default function Card({
+  name,
+  species,
+  onClose,
+  gender,
+  status,
+  origin,
+  image,
+  id,
+  key
+}) {
+  const [isFav, setIsFav] = useState(false);
+
+  const dispatch = useDispatch(); // CREO UN DISPATCH
+  const favorites = useSelector((state) => state.myFavorites);
+
+  function handleClick() {
+    //despachar el objeto de la accion
+    if (isFav) {
+      setIsFav(false);
+      dispatch(deleteFavorite(id));
+    } else {
+      setIsFav(true);
+      dispatch(
+        addFavorite({
+          name,
+          species,
+          onClose,
+          gender,
+          status,
+          origin,
+          image,
+          id,
+        })
+      );
+    }
+  }
+
+  useEffect(() => {
+    favorites.forEach((fav) => {
+      if (fav.id === id) {
+        setIsFav(true);
+      }
+    });
+  }, [favorites]);
+
+  return (
+    <div className={styles.containerCard}>
+      <div className={styles.containerButton}>
+        {isFav ? (
+          <button className={styles.buttonFav} onClick={handleClick}>❤️</button>
+        ) : (
+          <button className={styles.buttonFav} onClick={handleClick}>🤍</button>
+        )}
+        {onClose ? <button className={styles.buttonClose} onClick={() => onClose(id)}>X</button> : null}
+        <img src={image} alt="No se encontro" key={key} />
       </div>
-   );
+      <div className={styles.containerDescription}>
+        <Link to={`/deatil/${id}`}>
+          <h2 key={key}>Name: {name}</h2>
+        </Link>
+        <h2 key={key}>Status: {status}</h2>
+        <h2 key={key}>Species: {species}</h2>
+        <h2 key={key}>Gender: {gender}</h2>
+        <h2 key={key}>Origin: {origin}</h2>
+      </div>
+    </div>
+  );
 }

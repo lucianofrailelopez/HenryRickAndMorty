@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import validation from "../Validation/Validation";
+import validation from "../Validate/Validation";
 import styles from "./Form.module.css";
 
 export default function Form({ login }) {
