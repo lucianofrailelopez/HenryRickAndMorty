@@ -60,7 +60,6 @@ function App() {
          {
             location.pathname !== '/' && <Nav onSearch={onSearch} out={logout} />
          }
-         
          <Routes>
             <Route path='/' element={<Form login={login} />} />
             <Route path="/Home" element={<Cards characters={characters} onClose={onClose} />} />
