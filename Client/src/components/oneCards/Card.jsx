@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { addFavorite, deleteFavorite } from "../../redux/actions/actions";
+import { addFav, removeFav } from "../../redux/actions/actions";
 
 import styles from "./Card.module.css";
 
@@ -27,11 +27,11 @@ export default function Card({
     //despachar el objeto de la accion
     if (isFav) {
       setIsFav(false);
-      dispatch(deleteFavorite(id));
+      dispatch(removeFav(id));
     } else {
       setIsFav(true);
       dispatch(
-        addFavorite({
+        addFav({
           name,
           species,
           onClose,

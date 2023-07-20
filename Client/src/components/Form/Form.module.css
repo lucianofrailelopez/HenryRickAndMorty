@@ -30,7 +30,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     width: 85%;
-    height: 80px;
+    height: 95px;
 }
 
 .conatinerForm input {
@@ -50,6 +50,7 @@
 }
 
 .msgError {
+    margin: 0px;
     font-size: 12px;
     color: red;
 }

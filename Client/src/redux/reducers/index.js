@@ -12,14 +12,15 @@ export default function rootReducer(state = initialGlobalState, action) {
     case ADDFAVORITE:
       return {
         ...state,
-        myFavorites: [...state.allCharacters, action.payload],
-        allCharacters: [...state.allCharacters, action.payload],
+        myFavorites: action.payload,
+        allCharacters: action.payload,
       };
     case DELETEFAVORITE:
-      return {
-        ...state,
-        myFavorites: state.myFavorites.filter((fav) => fav.id !== action.payload),
-      };
+        return {
+          ...state,
+          myFavorites: action.payload,
+          allCharacters: action.payload
+        };
     case FILTER:
       const allCharactersFiltered = state.allCharacters.filter(
         (character) => character.gender === action.payload
@@ -28,8 +29,8 @@ export default function rootReducer(state = initialGlobalState, action) {
         ...state,
         myFavorites:
           action.payload === "allCharacters"
-          ? [...state.allCharacters]
-          : allCharactersFiltered
+            ? [...state.allCharacters]
+            : allCharactersFiltered,
       };
     case ORDER:
       const allCharactersFavCopy = [...state.allCharacters];
